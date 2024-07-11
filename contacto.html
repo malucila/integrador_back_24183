@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contacto - MundoCeliaco</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/barraNavegacion.css">
+    <link rel="icon" href="img/Lugares/iconoglutenfree.ico">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/lugares.css">  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+ 
+</head>
+
+<body class="bg-image no-scroll-y">
+     
+    <div class="contenedor">
+        <div class="header"> 
+        <div  >
+            <h2 style="text-align:left"><span style=" font-size:20px;cursor:pointer" onclick="openNav()">&#9776; </span>
+                <span >Contacto</span>
+            </h2>
+         </div>
+    </div>
+
+    <main class="contenido">
+        <h1>Ingrese sus Datos:</h1>
+        
+        <form name="formulario" action="https://formspree.io/f/xdoqvavy" method="POST">
+            
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ingrese su nombre" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Ingrese su apellido" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="edad">Edad:</label>
+                    
+                    <input type="text" name="edad" id="edad" class="form-control" placeholder="Ingrese su edad" required>
+                </div>
+                <div class="col-md mb-3">
+                    <label for="provincia">¿Es Celíaco?</label>
+                    <select name="es_celiaco" id="es_celiaco" class="form-select">
+                        <option value="1">SI</option>
+                        <option value="2">NO</option>
+                        <option value="3">QUIZAS</option>
+                    </select>
+                </div>
+              
+            </div>  
+            
+            <div class="row">
+                <div class="col-md mb-12">
+                    <label for="leng">Temas de Interés</label>
+                    <div class="row">
+                <div class="col-md mb-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="java" checked>
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Celiaquía
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-md mb-2">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="cplus" >
+                        <label class="form-check-label" for="flexCheckChecked">
+                          Veganismo
+                        </label>
+                      </div>     
+                    </div>                 
+                </div>
+                </div> 
+
+            <div class="row">
+                <div class="col-md mb-6">
+                    <p id="error">....</p>
+                </div>
+                <div class="col-md mb-6">
+                <input type="button" id="bl" value="Enviar" class="btn btn-secondary"  onclick="validarEnviar()">
+            </div>
+            </div>
+    </form>
+    </main>
+
+   
+
+ 
+    <aside class="sidebar">
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
+            <a href="referentes.html"><i class="fa fa-fw fa-user"></i> Referentes</a>
+            <a href="lugares.html"><i class="fa fa-cutlery"></i> Lugares</a>
+            <a href="almacen.html"><i class="fa fa-shopping-basket"></i> Almacén</a>
+            
+            <a href="contacto.html"><i class="fa fa-fw fa-envelope"></i> Contacto</a>
+            </div>
+    </aside>
+
+    <!-- Footer -->
+    <div class="footer">
+        <h2  ><img src="img/sintacc2.jpg" height="60px"width="60px"> </h2>
+    </div>
+    
+</div>
+</body>
+ 
+<script src="js/main.js"></script>
+
+</html>
