@@ -44,8 +44,8 @@
             
             <div class="row">
                 <div class="col-md-12 mb-3">
-                    <label for="nombre">Descripcion Producto</label>
-                    <input type="text" name="desripcion" id="descripcion" class="form-control" placeholder="Descripcion Producto" required>
+                    <label for="descripcion">Descripcion Producto</label>
+                    <input type="text" name="descripcion" id="descripcion" class="form-control" placeholder="Descripcion Producto" required>
                 </div>
                 
             </div>
@@ -310,6 +310,7 @@
         //Respuesta OK, muestra una alerta informando que el producto se agregó correctamente y limpia los campos del formulario para que puedan ser utilizados para un nuevo producto.
             .then(function (data) {
                     alert('Producto agregado correctamente.');
+                    
             })
 
         // En caso de error, mostramos una alerta con un mensaje de error.
