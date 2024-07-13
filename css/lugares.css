@@ -13,7 +13,7 @@ body {
 }
 
 body.no-scroll-y {
-    overflow-y: hidden; 
+    /* overflow-y: hidden;  */
 }
 
 /* Contenedor principal */
@@ -299,4 +299,9 @@ h2 a:hover {
 	object-fit: cover;
 }
 
+
+  
+  
+  /* hide scrollbar */
+  
 
