@@ -1,11 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
+
 
 <head>
     <title>Almacén - MundoCeliaco</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/barraNavegacion.css">
     <link rel="icon" href="img/Lugares/iconoglutenfree.ico">
@@ -15,10 +16,11 @@
  
 </head>
 
+
 <body class="bg-image no-scroll-y">
      
     <div class="contenedor">
-        <div class="header"> 
+        <div class="header">
         <div  >
             <h2 style="text-align:left"><span style=" font-size:20px;cursor:pointer" onclick="openNav()">&#9776; </span>
                 <span >Almacén Dietético</span>
@@ -26,13 +28,14 @@
          </div>
     </div>
 
+
     <main class="contenido">
         <h1>Nuestros Productos</h1>
         <section class="section dashboard">
          
-            <div class="container text-center">
+            <div class="container text-center" id="la_tabla">
         <table class="table table-striped" id="productos-table">
-            <thead  class="thead-dark"> 
+            <thead  class="thead-dark">
                 <tr>
                 <th>Código</th>
                 <th>Descripción</th>
@@ -49,16 +52,17 @@
             <div class="row ">
                 <div class="col-md mb-12">
                    <h1><button  class="btn btn-dark">
-                    <a class="sinraya" href="Producto.html?codigo=-1">Agregar Producto</a></button></h1> 
+                    <a class="sinraya" href="Producto.html?codigo=-1">Agregar Producto</a></button></h1>
             </div>
             </section>
     </main>
     <script>
         const URL = "http://127.0.0.1:5000/"
 
+
         //Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
         //const URL = "https://USUARIO.pythonanywhere.com/"
-        
+       
         // Obtiene el contenido del inventario
         function obtenerProductos() {
             fetch(URL + 'productos') // Realiza una solicitud GET al servidor y obtener la lista de productos.
@@ -72,9 +76,9 @@
                     productosTable.innerHTML = ''; // Limpia la tabla antes de insertar nuevos datos
                     data.forEach(producto => {
                         if ( producto.gluten==1)
-                            {sin_gluten = 'checked'} 
+                            {sin_gluten = 'checked'}
                             else {sin_gluten=''}
-                          
+                         
                         const row = productosTable.insertRow();
                         row.innerHTML = `<tr class="tr-dark">
                             <td>${producto.codigo}</td>
@@ -82,7 +86,7 @@
                             <td>${producto.cantidad}</td>
                             <td align="right">${producto.precio}</td>
                             <td align="center">
-                                    <input  type="checkbox" value="" id="java" ${sin_gluten} disabled> 
+                                    <input  type="checkbox" value="" id="java" ${sin_gluten} disabled>
                                  </td>
                             <td>
                                  <button  class="btn btn-secondary ">
@@ -96,22 +100,23 @@
                 // Captura y maneja errores, mostrando una alerta en caso de error al obtener los productos.
                 .catch(error => {
                     console.log('Error:', error);
-                    alert('Error al obtener los productos.');
+                   
                 });
         }
+
 
         // Se utiliza para eliminar un producto.
         function eliminarProducto(codigo) {
             // Se muestra un diálogo de confirmación. Si el usuario confirma, se realiza una solicitud DELETE al servidor a través de fetch(URL + 'productos/${codigo}', {method: 'DELETE' }).
-            if (confirm('¿Estás seguro de que quieres eliminar este producto?')) {
-                alert(URL+ 'productos/' + codigo);
+            if (confirm('¿Estás seguro de que quieres eliminar el producto: '+codigo+'?')) {
+               
                 fetch(URL + 'productos/' + codigo, { method: 'DELETE' })
                 // fetch(URL + `productos/${codigo}`, { method: 'DELETE' })
                     .then(response => {
                         if (response.ok) {
                             // Si es exitosa (response.ok), elimina el producto y da mensaje de ok.
                             obtenerProductos(); // Vuelve a obtener la lista de productos para actualizar la tabla.
-                            alert('Producto eliminado correctamente.');
+                           
                         }
                     })
                     // En caso de error, mostramos una alerta con un mensaje de error.
@@ -121,12 +126,10 @@
             }
         }
 
+
         // Cuando la página se carga, llama a obtenerProductos para cargar la lista de productos.
         document.addEventListener('DOMContentLoaded', obtenerProductos);
     </script>
-
-   
-
  
     <aside class="sidebar">
         <div id="mySidenav" class="sidenav">
@@ -139,14 +142,16 @@
             </div>
     </aside>
 
+
     <!-- Footer -->
     <div class="footer">
         <h2  ><img src="img/sintacc2.jpg" height="60px"width="60px"> </h2>
     </div>
-    
+   
 </div>
 </body>
  
 <script src="js/main.js"></script>
+
 
 </html>

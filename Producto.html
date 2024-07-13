@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Contacto - MundoCeliaco</title>
+    <title>Producto - MundoCeliaco</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -208,7 +208,8 @@
 
     // Se usa para enviar los datos modificados del producto al servidor.
     function guardarCambios(event) {
-        event.preventDefault();alert(document.getElementById('gluten').value);
+        event.preventDefault(); 
+        
         if (codigo!='-1'){
             const formData = new FormData();
             formData.append('codigo', codigo);
@@ -222,7 +223,7 @@
             // if (imagenSeleccionada) {
             //     formData.append('imagen', imagenSeleccionada, imagenSeleccionada.name);
             // }
-            alert('guardar Cam');alert(codigo);
+            
             fetch(URL + 'productos/' + codigo, {
                 method: 'PUT',
                 body: formData,
@@ -236,14 +237,16 @@
             })
             .then(data => {
                 alert('Producto actualizado correctamente.');
-                volverAlmacen();
+                 volverAlmacen();
                 //limpiarFormulario();
             })
             .catch(error => {
                 console.error('Error:', error);
                 alert('Error al actualizar el producto.');
             });
-        } else{altaProducto();volverAlmacen()}
+        } else{altaProducto();
+               //volverAlmacen()
+            }
 
 
 
@@ -255,7 +258,7 @@
         document.getElementById('descripcion').value = '';
         document.getElementById('cantidad').value = '';
         document.getElementById('precio').value = '';
-        document.getElementById('gluten').value = 0;
+        document.getElementById('gluten').value = 1;
                     // document.getElementById('proveModificar').value = '';
                     // document.getElementById('nuevaImagen').value = '';
 
@@ -279,52 +282,51 @@
         document.getElementById('datos-producto').style.display = 'none';
     }
     function altaProducto(){
-         
-            alert('en alta');
             var formData = new FormData();
-            formData.append('codigo', codigo);
+            // formData.append('codigo', codigo);
             formData.append('descripcion', document.getElementById('descripcion').value);
             formData.append('cantidad', document.getElementById('cantidad').value);
             // formData.append('proveedor', document.getElementById('proveModificar').value);
             formData.append('precio', document.getElementById('precio').value);
             formData.append('gluten', document.getElementById('gluten').value);
-            alert('en alta2');
-    // Realizamos la solicitud POST al servidor
-    fetch(URL + 'productos', {
-        method: 'POST',
-        body: formData // Aquí enviamos formData. Dado que formData puede contener archivos, no se utiliza JSON.
-    })
+            
+            // Realizamos la solicitud POST al servidor
+            fetch(URL + 'productos', {
+                method: 'POST',
+                body: formData  
+            })
 
-     
-    .then(function (response) {
-            if (response.ok) { 
-                //Si la respuesta es exitosa, convierte los datos de la respuesta a formato JSON.
-                return response.json(); 
-            } else {
-                // Si hubo un error, lanzar explícitamente una excepción
-                // para ser "catcheada" más adelante
-                throw new Error('Error al agregar el producto.');
-            }
-    })
+            .then(function (response) {
+                    if (response.ok) { 
+                        //Si la respuesta es exitosa, convierte los datos de la respuesta a formato JSON.
+                        return response.json(); 
+                    } else {
+                        // Si hubo un error, lanzar explícitamente una excepción
+                        // para ser "catcheada" más adelante
+                        throw new Error('Error al agregar el producto.');
+                    }
+            })
 
         //Respuesta OK, muestra una alerta informando que el producto se agregó correctamente y limpia los campos del formulario para que puedan ser utilizados para un nuevo producto.
-    .then(function (data) {
-            alert('Producto agregado correctamente.');
-    })
+            .then(function (data) {
+                    alert('Producto agregado correctamente.');
+            })
 
         // En caso de error, mostramos una alerta con un mensaje de error.
-    .catch(function (error) {
-            alert('Error al agregar el producto.');
-    })
+            .catch(function (error) {
+                     
+                     alert('Error rarro al agregar el producto.');
+                    
+            })
 
         // Limpiar el formulario en ambos casos (éxito o error)
-    .finally(function () {
+        .finally(function () {
             document.getElementById('descripcion').value = "";
             document.getElementById('cantidad').value = "";
             document.getElementById('precio').value = "";
             document.getElementById('gluten').value = "";
-            document.getElementById('imagenProducto').value = "";
-            document.getElementById('proveedorProducto').value = "";
+            // document.getElementById('imagenProducto').value = "";
+            // document.getElementById('proveedorProducto').value = "";
         });
 
     }
