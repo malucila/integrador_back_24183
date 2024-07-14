@@ -5,123 +5,122 @@
     <title>Producto - MundoCeliaco</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/barraNavegacion.css">
     <link rel="icon" href="img/Lugares/iconoglutenfree.ico">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="css/lugares.css">  
+    <link rel="stylesheet" href="css/lugares.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
- 
+    <script src="js/main.js"></script>
 </head>
 
 <body class="bg-image no-scroll-y">
-     
+
     <div class="contenedor">
-        <div class="header"> 
-        <div>
-            <h2 style="text-align:left"><span style=" font-size:20px;cursor:pointer" onclick="openNav()">&#9776; </span>
-                <span >Producto</span>
-            </h2>
-         </div>
-    </div>
-
-    <main class="contenido">
-         
-        <div id="app">
-            <form id="form-obtener-producto"  style="display: none;">
-                <label for="codigo">Código:</label>
-                <input type="text" id="codigo" required value="2"><br>
-                <button id="btnTraerProducto" type="submit">Modificar Producto</button>  
-            </form>
-
-
-            <div id="datos-producto" >
-                <h1 id="accion_producto">Modificar Producto</h1>
-            </div>
-            <form id="form-guardar-cambios">
-       
-            
-            <div class="row">
-                <div class="col-md-12 mb-3">
-                    <label for="descripcion">Descripcion Producto</label>
-                    <input type="text" name="descripcion" id="descripcion" class="form-control" placeholder="Descripcion Producto" required>
-                </div>
-                
-            </div>
-            <div class="row">
-                <div class="col-md-3 mb-3">
-                    <label for="gluten">¿Sin Gluten?</label>
-                    <select name="gluten" id="gluten" class="form-select">
-                        <option value="1">SI</option>
-                        <option value="0">NO</option>
-                       
-                    </select>
-                </div>
-                <div class="col-md-3 mb-3">
-                    <label for="precio">Precio:</label>
-                    
-                    <input type="text" name="precio" id="precio" class="form-control" placeholder="Ingrese Precio producto" required>
-                </div>
-                <div class="col-md-3 mb-3">
-                    <label for="cantidad">Stock:</label>
-                    
-                    <input type="text" name="cantidad" id="cantidad" class="form-control" placeholder="Ingrese Stock producto" required>
-                </div>
-                
-                
-              
-            </div>  
-            
-           <div class="row">
-                <div class="col-md mb-3">
-                    <p id="error"></p>
-                </div>
-                <div class="col-md mb-3">
-                    <a href="Almacen.html" id="verAlmacen" hidden > </a>
-
-                    <!-- <input type="button" id="bl" value="Enviar" class="btn btn-secondary"  onclick="validarEnviar()"> -->
-                </div>
-                <div class="col-md mb-3">
-                    <button type="submit" class="btn btn-dark ">Guardar Cambios</button>
-                </div>
-            </form>
-                <div class="col-md mb-3">
-                     
-                    <button  class="btn btn-dark">
-                    <a class="sinraya" href="Almacen.html">Volver</a></button>
-                </div>
-            <!-- </div> -->
-
-            <!-- </form> -->
+        <div class="header">
+            <div>
+                <h2 style="text-align:left"><span style=" font-size:20px;cursor:pointer" onclick="openNav()">&#9776;
+                    </span>
+                    <span>Producto</span>
+                </h2>
             </div>
         </div>
+
+        <main class="contenido">
+
+            <div id="app">
+                <form id="form-obtener-producto" style="display: none;">
+                    <label for="codigo">Código:</label>
+                    <input type="text" id="codigo" required value="2"><br>
+                    <button id="btnTraerProducto" type="submit">Modificar Producto</button>
+                </form>
+
+
+                <div id="datos-producto">
+                    <h1 id="accion_producto">Modificar Producto</h1>
+                </div>
+                <form id="form-guardar-cambios">
+
+
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <label for="descripcion">Descripcion Producto</label>
+                            <input type="text" name="descripcion" id="descripcion" class="form-control"
+                                placeholder="Descripcion Producto" required>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label for="gluten">¿Sin Gluten?</label>
+                            <select name="gluten" id="gluten" class="form-select">
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+
+                            </select>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="precio">Precio:</label>
+
+                            <input type="text" name="precio" id="precio" class="form-control"
+                                placeholder="Ingrese Precio producto" required>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="cantidad">Stock:</label>
+
+                            <input type="text" name="cantidad" id="cantidad" class="form-control"
+                                placeholder="Ingrese Stock producto" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md mb-3">
+                            <p id="error"></p>
+                        </div>
+                        <div class="col-md mb-3">
+                            <a href="Almacen.html" id="verAlmacen" hidden> </a>
+
+                            <!-- <input type="button" id="bl" value="Enviar" class="btn btn-secondary"  onclick="validarEnviar()"> -->
+                        </div>
+                        <div class="col-md mb-3">
+                            <button type="submit" class="btn btn-dark ">Guardar Cambios</button>
+                        </div>
+                </form>
+                <div class="col-md mb-3">
+
+                    <button class="btn btn-dark">
+                        <a class="sinraya" href="Almacen.html">Volver</a></button>
+                </div>
+                <!-- </div> -->
+                <!-- </form> -->
+            </div>
+    </div>
     </main>
 
-   
 
- 
+
+
     <aside class="sidebar">
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
-                <a href="referentes.html"><i class="fa fa-fw fa-user"></i> Referentes</a>
-                <a href="lugares.html"><i class="fa fa-cutlery"></i> Lugares</a>
-                <a href="almacen.html"><i class="fa fa-shopping-basket"></i> Almacén</a>
-                <a href="contacto.html"><i class="fa fa-fw fa-envelope"></i> Contacto</a>
-            </div>
+            <a href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
+            <a href="referentes.html"><i class="fa fa-fw fa-user"></i> Referentes</a>
+            <a href="lugares.html"><i class="fa fa-cutlery"></i> Lugares</a>
+            <a href="almacen.html"><i class="fa fa-shopping-basket"></i> Almacén</a>
+            <a href="contacto.html"><i class="fa fa-fw fa-envelope"></i> Contacto</a>
+        </div>
     </aside>
 
     <!-- Footer -->
     <div class="footer">
-        <h2  ><img src="img/sintacc2.jpg" height="60px"width="60px"> </h2>
+        <h2><img src="img/sintacc2.jpg" height="60px" width="60px"> </h2>
     </div>
-    
-</div>
+
+    </div>
 </body>
 <script>
-    // const URL = "http://127.0.0.1:5000/"
-    const URL = "https://malucila.pythonanywhere.com/"
+     
+    const URL = get_url()
 
 
     // Variables de estado para controlar la visibilidad y los datos del formulario
@@ -130,43 +129,42 @@
     let cantidad = '';
     let precio = '';
     let gluten = 0;
-    
+
     let mostrarDatosProducto = false;
     document.getElementById('form-obtener-producto').addEventListener('submit', obtenerProducto);
     document.getElementById('form-guardar-cambios').addEventListener('submit', guardarCambios);
     // document.getElementById('nuevaImagen').addEventListener('change', seleccionarImagen);
-    
+
     // Se ejecuta cuando se envía el formulario de consulta. Realiza una solicitud GET a la API y obtiene los datos del producto correspondiente al código ingresado.
-    function obtenerProducto(event) {   
-       
+    function obtenerProducto(event) {
+
         event.preventDefault();
-       //codigo = document.getElementById('codigo').value;
-       // toma el codigo a partir de la URL Es -1 cuando es alta
-        if (codigo !='-1'){
+        //codigo = document.getElementById('codigo').value;
+        // toma el codigo a partir de la URL Es -1 cuando es alta
+        if (codigo != '-1') {
             fetch(URL + 'productos/' + codigo)
-            .then(response => {
-                if (response.ok) {
-                    return response.json()
-                } else {
-                    throw new Error('Error al obtener los datos del producto.')
-                }
+                .then(response => {
+                    if (response.ok) {
+                        return response.json()
+                    } else {
+                        throw new Error('Error al obtener los datos del producto.')
+                    }
                 })
-            .then(data => {
-                descripcion = data.descripcion;
-                cantidad = data.cantidad;
-                precio = data.precio;
-                gluten = data.gluten;
-                 
-                // imagen_url = data.imagen_url;
-                mostrarDatosProducto = true; //Activa la vista del segundo formulario
-                mostrarFormulario();
+                .then(data => {
+                    descripcion = data.descripcion;
+                    cantidad = data.cantidad;
+                    precio = data.precio;
+                    gluten = data.gluten;
+                    // imagen_url = data.imagen_url;
+                    mostrarDatosProducto = true; //Activa la vista del segundo formulario
+                    mostrarFormulario();
                 })
-            .catch(error => {
-                alert('Código no encontrado.');
+                .catch(error => {
+                    alert('Código no encontrado.');
                 });
-        } 
+        }
     }
-     
+
 
     // Muestra el formulario con los datos del producto
     function mostrarFormulario() {
@@ -175,13 +173,13 @@
             document.getElementById('cantidad').value = cantidad;
             document.getElementById('precio').value = precio;
             document.getElementById('gluten').value = gluten;
-            // document.getElementById('proveModificar').value = proveedor;
+
 
             // const imagenActual = document.getElementById('imagen-actual');
             // if (imagen_url && !imagenSeleccionada) { // Verifica si imagen_url no está vacía y no se ha seleccionado una imagen
 
             //     imagenActual.src = './static/imagenes/' + imagen_url;                    
-                
+
             //     //Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
             //     //imagenActual.src = 'https://www.pythonanywhere.com/user/USUARIO/files/home/USUARIO/mysite/static/imagenes/' + imagen_url;
 
@@ -209,14 +207,13 @@
 
     // Se usa para enviar los datos modificados del producto al servidor.
     function guardarCambios(event) {
-        event.preventDefault(); 
-        
-        if (codigo!='-1'){
+        event.preventDefault();
+
+        if (codigo != '-1') {
             const formData = new FormData();
             formData.append('codigo', codigo);
             formData.append('descripcion', document.getElementById('descripcion').value);
             formData.append('cantidad', document.getElementById('cantidad').value);
-            // formData.append('gluten', document.getElementById('proveModificar').value);
             formData.append('precio', document.getElementById('precio').value);
             formData.append('gluten', document.getElementById('gluten').value);
 
@@ -224,35 +221,38 @@
             // if (imagenSeleccionada) {
             //     formData.append('imagen', imagenSeleccionada, imagenSeleccionada.name);
             // }
-            
+
             fetch(URL + 'productos/' + codigo, {
                 method: 'PUT',
                 body: formData,
             })
-            .then(response => {
-                if (response.ok) {
-                    return response.json()
-                } else {
-                    throw new Error('Error al guardar los cambios del producto.')
-                }
-            })
-            .then(data => {
-                alert('Producto actualizado correctamente.');
-                 volverAlmacen();
-                //limpiarFormulario();
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('Error al actualizar el producto.');
-            });
-        } else{altaProducto();
-               //volverAlmacen()
-            }
+                .then(response => {
+                    if (response.ok) {
+                        return response.json()
+                    } else {
+                        throw new Error('Error al guardar los cambios del producto.')
+                    }
+                })
+                .then(data => {
+                    alert('Producto actualizado correctamente.');
+                    volverAlmacen();
+                    //limpiarFormulario();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error al actualizar el productooo.');
+                });
+        } else {
+            altaProducto();
+            //volverAlmacen()
+        }
 
 
 
     }
-    function volverAlmacen(){ document.getElementById('verAlmacen').click();}
+    function volverAlmacen() {
+        document.getElementById('verAlmacen').click();
+    }
     // Restablece todas las variables relacionadas con el formulario a sus valores iniciales, lo que efectivamente "limpia" el formulario.
     function limpiarFormulario() {
         document.getElementById('codigo').value = '';
@@ -260,21 +260,21 @@
         document.getElementById('cantidad').value = '';
         document.getElementById('precio').value = '';
         document.getElementById('gluten').value = 1;
-                    // document.getElementById('proveModificar').value = '';
-                    // document.getElementById('nuevaImagen').value = '';
+        // document.getElementById('proveModificar').value = '';
+        // document.getElementById('nuevaImagen').value = '';
 
-                    // const imagenActual = document.getElementById('imagen-actual');
-                    // imagenActual.style.display = 'none';
+        // const imagenActual = document.getElementById('imagen-actual');
+        // imagenActual.style.display = 'none';
 
-                    // const imagenVistaPrevia = document.getElementById('imagen-vista-previa');
-                    // imagenVistaPrevia.style.display = 'none';
+        // const imagenVistaPrevia = document.getElementById('imagen-vista-previa');
+        // imagenVistaPrevia.style.display = 'none';
 
         codigo = '';
         descripcion = '';
         cantidad = '';
         precio = '';
         gluten = 0;
-        // proveedor = '';
+
         // imagen_url = '';
         // imagenSeleccionada = null;
         // imagenUrlTemp = null;
@@ -282,68 +282,69 @@
 
         document.getElementById('datos-producto').style.display = 'none';
     }
-    function altaProducto(){
-            var formData = new FormData();
-            // formData.append('codigo', codigo);
-            formData.append('descripcion', document.getElementById('descripcion').value);
-            formData.append('cantidad', document.getElementById('cantidad').value);
-            // formData.append('proveedor', document.getElementById('proveModificar').value);
-            formData.append('precio', document.getElementById('precio').value);
-            formData.append('gluten', document.getElementById('gluten').value);
-            
-            // Realizamos la solicitud POST al servidor
-            fetch(URL + 'productos', {
-                method: 'POST',
-                body: formData  
-            })
+    function altaProducto() {
+        var formData = new FormData();
+        // formData.append('codigo', codigo);
+        formData.append('descripcion', document.getElementById('descripcion').value);
+        formData.append('cantidad', document.getElementById('cantidad').value);
+        formData.append('precio', document.getElementById('precio').value);
+        formData.append('gluten', document.getElementById('gluten').value);
+
+        // Realizamos la solicitud POST al servidor
+        fetch(URL + 'productos', {
+            method: 'POST',
+            body: formData
+        })
 
             .then(function (response) {
-                    if (response.ok) { 
-                        //Si la respuesta es exitosa, convierte los datos de la respuesta a formato JSON.
-                        return response.json(); 
-                    } else {
-                        // Si hubo un error, lanzar explícitamente una excepción
-                        // para ser "catcheada" más adelante
-                        throw new Error('Error al agregar el producto.');
-                    }
+                if (response.ok) {
+                    //Si la respuesta es exitosa, convierte los datos de la respuesta a formato JSON.
+                    return response.json();
+                } else {
+                    // Si hubo un error, lanzar explícitamente una excepción
+                    // para ser "catcheada" más adelante
+                    throw new Error('Error al agregar el producto.');
+                }
             })
 
-        //Respuesta OK, muestra una alerta informando que el producto se agregó correctamente y limpia los campos del formulario para que puedan ser utilizados para un nuevo producto.
+            //Respuesta OK, muestra una alerta informando que el producto se agregó correctamente y limpia los campos del formulario para que puedan ser utilizados para un nuevo producto.
             .then(function (data) {
-                    alert('Producto agregado correctamente.');
-                    
+                alert('Producto agregado correctamente.');
+
             })
 
-        // En caso de error, mostramos una alerta con un mensaje de error.
+            // En caso de error, mostramos una alerta con un mensaje de error.
             .catch(function (error) {
-                     
-                     alert('Error rarro al agregar el producto.');
-                    
+
+                alert('Error rarro al agregar el producto.');
+
             })
 
-        // Limpiar el formulario en ambos casos (éxito o error)
-        .finally(function () {
-            document.getElementById('descripcion').value = "";
-            document.getElementById('cantidad').value = "";
-            document.getElementById('precio').value = "";
-            document.getElementById('gluten').value = "";
-            // document.getElementById('imagenProducto').value = "";
-            // document.getElementById('proveedorProducto').value = "";
-        });
+            // Limpiar el formulario en ambos casos (éxito o error)
+            .finally(function () {
+                document.getElementById('descripcion').value = "";
+                document.getElementById('cantidad').value = "";
+                document.getElementById('precio').value = "";
+                document.getElementById('gluten').value = "";
+                // document.getElementById('imagenProducto').value = "";
+
+            });
 
     }
-    
-    window.onload = function(e){  
+
+    window.onload = function (e) {
         // toma codigo de la URL y en función de eso modifica cartel
         const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString); 
+        const urlParams = new URLSearchParams(queryString);
         codigo = urlParams.get('codigo');
         document.getElementById('btnTraerProducto').click();
-        
-        if (codigo != '-1'){cartel = 'Modificar Producto'}else{cartel='Alta Producto'}
-        document.getElementById('accion_producto').innerHTML=cartel;
+        if (codigo != '-1') {
+            cartel = 'Modificar Producto'
+        } else { cartel = 'Alta Producto' }
 
-                    }
+        document.getElementById('accion_producto').innerHTML = cartel;
+
+    }
 </script>
 <script src="js/main.js"></script>
 
