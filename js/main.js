@@ -1,4 +1,11 @@
  
+    function get_url(){
+       // modificar acá la URL según donde esté ejecutando
+        return  'http://127.0.0.1:5000/';
+
+        // return 'https://malucila.pythonanywhere.com/';
+
+    } 
     function openNav() {
       document.getElementById("mySidenav").style.width = "250px";
     }
